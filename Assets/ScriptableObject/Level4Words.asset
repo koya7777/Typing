@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7d7b302a11c8f41964c30619f506d4, type: 3}
+  m_Name: Level4Words
+  m_EditorClassIdentifier: 
+  hiraganaWords:
+  - "\u6E05\u5EC9\u6F54\u767D"
+  - "\u6211\u7530\u5F15\u6C34"
+  - "\u4E09\u5BD2\u56DB\u6E29"
+  - "\u54C1\u884C\u65B9\u6B63"
+  - "\u6D45\u5B66\u83F2\u624D"
+  - "\u9152\u6C60\u8089\u6797"
+  - "\u81E8\u6A5F\u5FDC\u5909"
+  - "\u8352\u5510\u7121\u7A3D"
+  - "\u56FD\u571F\u7121\u53CC"
+  - "\u559C\u6012\u54C0\u697D"
+  romajiWords:
+  - seirenkeppaku
+  - gadeninsui
+  - sankansion
+  - hinkouhousei
+  - sengakuhisai
+  - shuchinikurin
+  - rinkiouhen
+  - koutoumukei
+  - kokudomusou
+  - kidoairaku

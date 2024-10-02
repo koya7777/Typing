@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7d7b302a11c8f41964c30619f506d4, type: 3}
+  m_Name: Level1Words
+  m_EditorClassIdentifier: 
+  hiraganaWords:
+  - "\u308A\u3093\u3054"
+  - "\u307F\u304B\u3093"
+  - "\u3076\u3069\u3046"
+  - "\u30AA\u30EC\u30F3\u30B8"
+  - "\u3082\u3082"
+  romajiWords:
+  - ringo
+  - mikan
+  - budou
+  - orenji
+  - momo
