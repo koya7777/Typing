@@ -1,0 +1,58 @@
+name: Unity WebGL Build and Deploy
+
+on:
+  push:
+    branches:
+      - master  # masterブランチにpushされたら実行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+#    - name: Set CompressionFormat to Disabled
+#      run: |
+#        sed -i -e 's/webGLCompressionFormat: ./webGLCompressionFormat: 2/' ProjectSettings/ProjectSettings.asset
+
+    - name: Unity Builder
+      uses: game-ci/unity-builder@v3
+      with:
+        targetPlatform: WebGL
+        unityVersion: 2021.3.13f1
+        allowDirtyBuild: true
+      env:
+        UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+    - name: Upload artifact for deployment
+      uses: actions/upload-artifact@v3
+      with:
+        name: WebGLBuild
+        path: WebglBuild/  # ビルド後のWebGLフォルダのパス
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download build artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: WebGLBuild
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2  # v2を使用
+      with:
+        branch: gh-pages  # デプロイするブランチ名
+        folder: WebGLBuild  # アップロードされたビルドのフォルダ名
