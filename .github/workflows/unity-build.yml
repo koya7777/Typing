@@ -50,6 +50,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: WebGLBuild
+        path: Build/WebglBuild/  # アーティファクトの保存先を指定
 
     - name: Deploy to GitHub Pages
       id: deployment
