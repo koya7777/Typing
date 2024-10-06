@@ -13,9 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
- #   - name: Set CompressionFormat to Disabled
- #     run: |
- #       sed -i -e 's/webGLCompressionFormat: ./webGLCompressionFormat: 2/' ProjectSettings/ProjectSettings.asset
+    - name: Set CompressionFormat to Disabled
+      run: |
+        sed -i -e 's/webGLCompressionFormat: ./webGLCompressionFormat: 2/' ProjectSettings/ProjectSettings.asset
 
     - name: Unity Builder
       uses: game-ci/unity-builder@v2
