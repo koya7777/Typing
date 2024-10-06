@@ -26,14 +26,14 @@ jobs:
       env:
         UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
- #   - name: List build directory
- #     run: ls -R Build/
+    - name: List build directory
+      run: ls -R build/
 
     - name: Upload artifact for deployment
       uses: actions/upload-artifact@v3
       with:
         name: WebGLBuild
-        path: Build/WebGL/  # ビルド後のWebGLフォルダのパス
+        path: build/WebGL/WebGL  # ビルド後のWebGLフォルダのパス
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: WebGLBuild
-        path: Build/WebGL/  # アーティファクトの保存先を指定
+        path: build/WebGL/WebGL  # アーティファクトの保存先を指定
 
     - name: Deploy to GitHub Pages
       id: deployment
