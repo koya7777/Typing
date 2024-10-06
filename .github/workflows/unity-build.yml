@@ -23,6 +23,7 @@ jobs:
         targetPlatform: WebGL
         unityVersion: 2021.3.13f1
         allowDirtyBuild: true
+        skipActivation: true
       env:
         UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
