@@ -1,9 +1,9 @@
 name: Unity WebGL Build and Deploy
 
 on:
-  push:
-    branches:
-      - master  # masterブランチにpushされたら実行
+#  push:
+#    branches:
+#      - master  # masterブランチにpushされたら実行
   workflow_dispatch:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         sed -i -e 's/webGLCompressionFormat: ./webGLCompressionFormat: 2/' ProjectSettings/ProjectSettings.asset
 
     - name: Unity Builder
-      uses: game-ci/unity-builder@v3
+      uses: game-ci/unity-builder@v2
       with:
         targetPlatform: WebGL
         unityVersion: 2021.3.13f1
