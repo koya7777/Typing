@@ -1,0 +1,29 @@
+name: Unity License Check
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  activate-license:
+    name: Activate Unity License
+    runs-on: ubuntu-latest
+
+    steps:
+    # リポジトリをチェックアウト
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Unityのライセンスをアクティベート
+    - name: Activate Unity License
+      uses: game-ci/unity-activate@v4
+      with:
+        unityVersion: '2021.3.13f1' # ここにあなたのUnityのバージョンを指定
+      env:
+        UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+    # アクティベーションの結果を確認
+    - name: Check if license activation was successful
+      run: echo "Unity License Activation Completed"

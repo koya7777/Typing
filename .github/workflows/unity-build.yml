@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master  # masterブランチにpushされたら実行
+  workflow_dispatch:
 
 jobs:
   build:
