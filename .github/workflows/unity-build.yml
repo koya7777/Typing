@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: WebGLBuild
-        path: WebglBuild/  # ビルド後のWebGLフォルダのパス
+        path: Build/WebglBuild/  # ビルド後のWebGLフォルダのパス
 
   deploy:
     runs-on: ubuntu-latest
