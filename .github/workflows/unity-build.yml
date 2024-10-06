@@ -7,24 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  activate-license:
-    runs-on: ubuntu-latest
-    steps:
-      # リポジトリをチェックアウト
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # Unityのライセンスをアクティベート
-      - name: Activate Unity License
-        uses: game-ci/unity-activate@v2
-        with:
-          unityVersion: '2021.3.13f1'  # Unityのバージョンを指定
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}  # ライセンスキーを環境変数に設定
-
   build:
     runs-on: ubuntu-latest
-    needs: activate-license  # ライセンスアクティベーションが完了するまで待つ
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
