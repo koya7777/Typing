@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: WebGLBuild
-        path: build/WebGL/WebGL  # ビルド後のWebGLフォルダのパス
+        path: build/WebGL  # ビルド後のWebGLフォルダのパス
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: WebGLBuild
-        path: build/WebGL/WebGL  # アーティファクトの保存先を指定
+        path: build/WebGL  # アーティファクトの保存先を指定
 
     - name: Deploy to GitHub Pages
       id: deployment
