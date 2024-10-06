@@ -26,8 +26,8 @@ jobs:
       env:
         UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
-    - name: List build directory
-      run: ls -R Build/
+ #   - name: List build directory
+ #     run: ls -R Build/
 
     - name: Upload artifact for deployment
       uses: actions/upload-artifact@v3
