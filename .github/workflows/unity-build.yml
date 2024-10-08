@@ -25,7 +25,9 @@ jobs:
         allowDirtyBuild: true
       env:
         UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-
+        UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+        UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        
     - name: List build directory
       run: ls -R build/
 
